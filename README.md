@@ -1,4 +1,4 @@
-# Student Work Permit Management System 🎓🛂
+# Student and Work Permit Management System 🎓🛂
 
 A full-stack web application designed to streamline the application, verification, and management of student and work permits. The system includes facial recognition for secure identity verification and online payment integration witj Stripe.
 
