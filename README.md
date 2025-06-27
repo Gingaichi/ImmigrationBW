@@ -1,66 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Student Work Permit Management System 🎓🛂
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-stack web application designed to streamline the application, verification, and management of student and work permits. The system includes facial recognition for secure identity verification and online payment integration witj Stripe.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- ✅ Registration & login
+- 🧾 Online application for student permits and work permits
+- 📄 Upload & manage required documents
+- 🔄 Application status tracking
+- 🧠 Face authentication using webcam + uploaded passport photo
+- 🧠 Liveness detection (head movement / facial match)
+- 🧠 Image processing (passport photo background color checking)
+- 📬 Email notifications and in-app notifications on application updates
+- 🔐 Role-based access for Admin, Immigration Officer, and Student
+- 📊 Admin dashboard with application statistics
+- 🧾 Stripe payment integration (if applicable)
+- 📁 Document export / permit PDF generation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🧠 Facial Recognition & Liveness
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Uses Python and the `face_recognition` library
+- Compares uploaded passport photo with real-time webcam feed
+- Adds liveness detection via head movement prompts
+- Integrated into Laravel backend through API and Python-Flask microservice
 
-## Learning Laravel
+## 🛠 Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Layer        | Technology                     |
+|--------------|---------------------------------|
+| Frontend     | Blade (Laravel)   |
+| Backend      | Laravel                         |
+| Face Auth    | Python 3.13 + Flask + OpenCV    |
+| Auth         | Laravel Sanctum / Passport      |
+| DB           | MySQL             |
+| Payment      | Stripe API           |
+| PDF Export   | barryvdh/laravel-dompdf         |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🔄 System Flow
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. User signs up or logs in
+2. Fills either work permit or student permit application form
+3. Uploads required documents
+4. Proceeds to facial verification (webcam + passport photo)
+5. System checks match & liveness
+6. Proceeds to payment
+7. Receives receipt
+8. Application reviewed by officer
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🖼️ Screenshots
 
-### Premium Partners
+Landing Page
+![Screenshot 2025-04-29 095020](https://github.com/user-attachments/assets/eb1d59c7-c269-4935-8f5b-136951d46dde)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Forms
+![Screenshot 2025-04-29 100528](https://github.com/user-attachments/assets/35257dcd-ca4e-4478-8fdd-ff815c2fcf94)
 
-## Contributing
+Face Authentication Screen
+![image](https://github.com/user-attachments/assets/c46d790f-51ac-4a91-9de9-70b1a69d6a78)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Stripe Payment Screen
 
-## Code of Conduct
+![Screenshot 2025-04-29 102448](https://github.com/user-attachments/assets/192887c6-f23a-4677-9e9e-a497b5c0cba9)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+User Dashboard
+![Screenshot 2025-04-29 103102](https://github.com/user-attachments/assets/b9a308ce-4453-4f3b-b3a8-5df9908661c7)
 
-## Security Vulnerabilities
+Analytics Page
+![Screenshot 2025-04-29 141726](https://github.com/user-attachments/assets/f9970c53-7221-4b5b-a0a4-e58caf8a34ef)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🧪 Installation & Setup
+
+### Laravel Setup
+
+clone https://github.com/yourusername/work-permit-system.git
+cd work-permit-system
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+
+### Face Authentication Setup
+
+cd face-auth
+pip install -r requirements.txt
+python app.py
+
