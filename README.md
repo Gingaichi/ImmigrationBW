@@ -2,6 +2,10 @@
 
 A full-stack web application designed to streamline the application, verification, and management of student and work permits. The system includes facial recognition for secure identity verification and online payment integration witj Stripe.
 
+Visit website at
+https://immigrationbw-main-ssxsqs.laravel.cloud/landing
+(database is not hosted yet, so some functionalities are unavailable for now)
+
 ## 🚀 Features
 
 - ✅ Registration & login
